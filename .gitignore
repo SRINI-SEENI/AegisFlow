@@ -13,6 +13,11 @@ venv/
 .env.local
 .env.*.local
 
+# ── Data & DVC ──────────────────────────────────────
+data/raw/
+data/processed/
+.dvc/cache/
+
 # ── IDE / Editor ────────────────────────────────────
 .vscode/
 .idea/

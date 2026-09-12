@@ -1,0 +1,23 @@
+[
+  {
+    "article_id": "news_001",
+    "title": "International Shell Network Uncovered in Banking Probe",
+    "entities": [
+      "Apex Holdings Ltd",
+      "Viktor Petrov"
+    ],
+    "date": "2026-05-14",
+    "source": "Global Financial Intelligence",
+    "text": "Regulators and law enforcement agencies have identified Apex Holdings Ltd and individual associate Viktor Petrov as core nodes in an elaborate international shell network facilitating illicit fund transfers through high-frequency accounts across multiple international jurisdictions."
+  },
+  {
+    "article_id": "news_002",
+    "title": "Fintech Fraud Ring Exploits Shared Mobile Devices",
+    "entities": [
+      "Vortex Trading Corp"
+    ],
+    "date": "2026-07-22",
+    "source": "CyberCrime Watch",
+    "text": "Cybersecurity researchers highlighted a major fraud syndicate utilizing virtualized device emulators and shared IP proxies to execute automated smurfing deposits into digital wallets linked to Vortex Trading Corp."
+  }
+]

@@ -1,0 +1,13 @@
+prepare:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  missing_impute_num: -999
+  missing_impute_cat: "UNKNOWN"
+
+train:
+  random_state: 42
+  train_split_ratio: 0.8
+  max_depth: 6
+  learning_rate: 0.05
+  n_estimators: 300
+  scale_pos_weight: 5.0

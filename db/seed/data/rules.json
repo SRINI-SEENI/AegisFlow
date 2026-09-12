@@ -1,0 +1,26 @@
+[
+  {
+    "rule_id": "RULE_001",
+    "name": "Sanctions List Direct Match",
+    "action": "DECLINE",
+    "priority": 100
+  },
+  {
+    "rule_id": "RULE_002",
+    "name": "Impossible Travel Velocity",
+    "action": "DECLINE",
+    "priority": 90
+  },
+  {
+    "rule_id": "RULE_003",
+    "name": "High Amount New Device",
+    "action": "REVIEW",
+    "priority": 70
+  },
+  {
+    "rule_id": "RULE_004",
+    "name": "Rapid Smurfing Threshold",
+    "action": "REVIEW",
+    "priority": 80
+  }
+]

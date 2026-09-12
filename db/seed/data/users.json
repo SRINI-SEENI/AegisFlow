@@ -1,0 +1,22 @@
+[
+  {
+    "email": "admin@aegisflow.io",
+    "name": "System Admin",
+    "role": "admin"
+  },
+  {
+    "email": "analyst.priya@aegisflow.io",
+    "name": "Priya Sharma",
+    "role": "aml_analyst"
+  },
+  {
+    "email": "analyst.marcus@aegisflow.io",
+    "name": "Marcus Vance",
+    "role": "fraud_analyst"
+  },
+  {
+    "email": "manager.sarah@aegisflow.io",
+    "name": "Sarah Connor",
+    "role": "manager"
+  }
+]

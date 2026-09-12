@@ -1,0 +1,10 @@
+stages:
+  prepare_data:
+    cmd: python ml/src/aegis_ml/training/prepare_ieee.py --raw-dir data/raw --processed-dir data/processed
+    deps:
+      - ml/src/aegis_ml/training/prepare_ieee.py
+    params:
+      - prepare.missing_impute_num
+      - prepare.missing_impute_cat
+    outs:
+      - data/processed/ieee_cis_processed.parquet

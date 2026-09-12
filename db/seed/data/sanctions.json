@@ -1,0 +1,26 @@
+[
+  {
+    "entity_name": "Apex Holdings Ltd",
+    "entity_type": "ORGANIZATION",
+    "country": "RU",
+    "list_name": "OFAC_SDN"
+  },
+  {
+    "entity_name": "Vortex Trading Corp",
+    "entity_type": "ORGANIZATION",
+    "country": "IR",
+    "list_name": "OFAC_SDN"
+  },
+  {
+    "entity_name": "Viktor Petrov",
+    "entity_type": "INDIVIDUAL",
+    "country": "RU",
+    "list_name": "EU_SANCTIONS"
+  },
+  {
+    "entity_name": "Shadow Global Logistics",
+    "entity_type": "ORGANIZATION",
+    "country": "KP",
+    "list_name": "UN_SANCTIONS"
+  }
+]
