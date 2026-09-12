@@ -51,6 +51,28 @@ def generate_mock_ieee_cis(output_dir: str, num_samples: int = 1000):
     df_id.to_csv(id_path, index=False)
     print(f"[+] Prepared IEEE-CIS raw datasets at: {output_dir}")
 
+def download_from_kaggle(raw_dir: str) -> bool:
+    """Attempt to download real IEEE-CIS dataset via Kaggle API if credentials exist."""
+    try:
+        import subprocess
+        print("[*] Attempting Kaggle CLI download for ieee-fraud-detection...")
+        os.makedirs(raw_dir, exist_ok=True)
+        res = subprocess.run(
+            ["kaggle", "competitions", "download", "-c", "ieee-fraud-detection", "-p", raw_dir],
+            capture_output=True, text=True
+        )
+        if res.returncode == 0:
+            print("[+] Successfully downloaded Kaggle dataset archive. Extracting...")
+            import zipfile
+            zip_path = os.path.join(raw_dir, "ieee-fraud-detection.zip")
+            if os.path.exists(zip_path):
+                with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                    zip_ref.extractall(raw_dir)
+                return True
+    except Exception as e:
+        print(f"[-] Kaggle CLI download skipped/unavailable: {e}")
+    return False
+
 def process_ieee_cis(raw_dir: str, processed_dir: str):
     """ETL process: merges identity & transaction features, imputes, cleans."""
     os.makedirs(processed_dir, exist_ok=True)
@@ -59,8 +81,11 @@ def process_ieee_cis(raw_dir: str, processed_dir: str):
     id_path = os.path.join(raw_dir, "train_identity.csv")
 
     if not os.path.exists(tx_path) or not os.path.exists(id_path):
-        print(f"Raw data not found in {raw_dir}. Generating synthetic mock IEEE-CIS dataset...")
-        generate_mock_ieee_cis(raw_dir)
+        # Attempt Kaggle download first, fallback to synthetic IEEE-CIS schema
+        downloaded = download_from_kaggle(raw_dir)
+        if not downloaded and (not os.path.exists(tx_path) or not os.path.exists(id_path)):
+            print(f"[!] Kaggle API not configured. Generating IEEE-CIS schema fallback in '{raw_dir}'...")
+            generate_mock_ieee_cis(raw_dir)
 
     df_tx = pd.read_csv(tx_path)
     df_id = pd.read_csv(id_path)
